@@ -1,23 +1,30 @@
+![download](https://user-images.githubusercontent.com/100974682/171773873-d48bfcdb-0921-45a4-8d7a-c31048ff0c78.png)
 <h1 align="center">
     <br>
-    <p align="center">Reprograma - Semana 10 (Projeto Guiado)<p>
+    <p align="center"> # Turma Online 16 - Back-end |Reprograma - Semana 10 (Projeto Guiado) 🚀 <p>
 </h1>
 
-Olaaaaaaa! Sejam bem-vindas a Semana 10 de projetinho! Meu nome é Mayhhara Morais e vou acompanhar vocês nesse projeto.
 
-# Vamos começar!
+# ⚠️ Contém projeto integrado da semana 10 da reprograma. É um server de Podcasts e Músicas. _Projeto API Nodejs "{reprograma}fy"._
 
-# Projeto API Nodejs "{reprograma}fy"
-
-Parabéns, você foi escolhida para desenvolver um novo produto que deverá ser lançado em breve. Que tal montarmos nossa própria playlist de músicas? Na nossa playlist poderemos favoritar nossas músicas e ver quais artistas tocam a música. Além disso, poderemos inserir novas músicas ou remover da nossa playlist as que não queremos mais. Não curte músicas? Tem espaço pra podcast também!! No nosso {reprograma}fy você poderá listar todos os podcasts e também filtra-los por tópico. Somado a isso, pode também inserir novos podcasts ou remover algum já existente, além de conseguir avaliá-lo.
+Foi montado minha própria playlist de músicas e podcasts. Na nossa playlist poderemos favoritar nossas músicas e ver quais artistas tocam a música. Além disso, poderemos inserir novas músicas ou remover da nossa playlist as que não queremos mais. E se vc não curte músicas, tem espaço pra podcast também!! No nosso {reprograma}fy você poderá listar todos os podcasts e também filtra-los por tópico. Somado a isso, pode também inserir novos podcasts ou remover algum já existente, além de conseguir avaliá-lo.
 <br>
 
-Você será a desenvolvedora backend responsável pelo desenvolvimento da API que deverá ser feito em Nodejs.
+Fui responsável no desenvolvimento da API que foi feito em Nodejs.
+
+
+![callbacks](https://user-images.githubusercontent.com/100974682/171773499-52c192ed-0137-484d-be60-6a51408e2bc1.jpg)
+
+
+# 🧠Falando um pouquinho do contexto
 
 A listagem de músicas será no seguinte formato: ```{ titulo, ano de lançamento, favoritada, artistas }```
 
 A listagem de podcasts será no seguinte formato: ```{ nome, nome da apresentadora(podcaster), tópico, nota }```
 
+## `Como foi criado o projeto` 
+
+### _`Comandos e informações abaixo :) `_
 
 O novo produto de músicas deverá:
 
@@ -148,13 +155,7 @@ Para não precisar ficar escrevendo ```nodemon server.js``` para inicializar o s
 ```
 Dessa forma para inicializar o servidor, basta digitar ```npm start``` no terminal e pressionar enter, que o mesmo já chamará automaticamente o comando ```nodemon server.js```.
 
-### Vamos criar nossas rotas
-
-### Nova rota de GET para retornar as musicas
-
-A empresa reprogramafy acabou de te enviar uma base de dados de exemplo chamado *musicas.json* e *podcasts.json* que ficam guardadinhos na pasta *models*. Essa contém uma listagem de musicas/podcasts que deveremos trabalhar. Com a listagem em mãos, poderemos desenvolver uma rota GET que exibirá essa listagem toda vez que uma requisição para listar as musicas/podcasts seja chamada.
-
- Iremos, em seguida, na pasta *routes* e criaremos um arquivo chamado *musicas.js* e em seguida criaremos um arquivo chamado *podcasts.json*. Nessas, iremos armazenar todas as rotas referentes as musicas e podcasts, respectivamente. Nosso projeto deverá estar com a seguinte estrutura:
+### Nosso projeto deverá estar com a seguinte estrutura:
 
 ```
 reprogramafy
@@ -185,24 +186,6 @@ app.use("/podlist", podcastsRoutes)
 
 Estamos dizendo para a aplicação utilizar as rotas dos arquivos *musicasRoutes.js* / *podcastsRoutes.js* e utilizar a rota "/playlist" para musicas ("/podlist" para podcasts),  para executá-las. Isso significa que toda vez que você chamar *http://localhost:1313/playlist*, a nossa rota de playlist musicas será chamada. (O mesmo se aplica para *http://localhost:1313/podlist*)
 
-Entretanto, ainda não escrevemos nenhuma rota. Para escrever nossa primeira rota que listará as musicas, deveremos abrir a pasta *routes* e editar o arquivo *musicasRoutes.js* e *podcastsRoutes.js*: 
-
-```musicasRoutes.js
-const express = require("express")
-const router = express.Router()
-const controller = require("../controllers/musicasController")
-
-router.get("/musicas", controller.getAllMusics)
-router.get("/musica/buscar/:id", controller.getMusicById)
-router.get("/musica/artista", controller.getMusicByArtist)
-
-
-module.exports = router;
-```
-
-Nessa estamos dizendo que toda vez que for utilizado o verbo GET na chamada *http://localhost:1313/playlist/musics*, o *controller.getAllMusics* será executado. Mas o que são esses *controller.getAllMusics*, *controller.getMusicById*, *controller.getMusicByArtist* ? Precisamos criar eles ainda, certo? Então vamos lá!
-
-Primeiramente deveremos criar nosso controller de musicas. Então na pasta *controllers* deveremos criar o arquivo *musicasController.js*. Nesse, deveremos criar, as funções *getAllMusics*, *getMusicById* e *getMusicByArtist* que estamos chamando na nossa rota de GET.
 
 ### Testando a rota GET via Postman
 
@@ -309,5 +292,40 @@ Para testar, via Postman, a rota DELETE que deleta uma música, deveremos clicar
 
 Desenvolvemos todas as rotas necessárias para nosso produto da reprogramafy. Criamos a rota de POST (que cria uma nova musica), tres rotas de GET (uma para trazer todas as musicas, uma para trazer uma musica dado o id e a última para trazer as musicas dado o artista), PUT (para alterar a musica), PATCH (para alterar o status de favorito da musica) e DELETE (para deletar a musica). Com todas as rotas desenvolvidas na nossa API de musicas está pronta pra ser lançada!!
 
+### `Mas vamos ao que interessa`
 
+O que foi criado de fato, segue abaixo para vocês verem como ficou.
+
+### `SERVER`
+![server](https://user-images.githubusercontent.com/100974682/171772824-dc04ee05-5a08-47a3-9369-d191e16d63ca.png)
+
+### `GET`
+![get](https://user-images.githubusercontent.com/100974682/171772832-8cf195df-d822-43df-b153-6f73999aba49.png)
+
+### `GET`
+![get2](https://user-images.githubusercontent.com/100974682/171772849-d1c7603e-8ff3-42e3-83e7-74f959b2cada.png)
+
+### `GET`
+![get3](https://user-images.githubusercontent.com/100974682/171772853-96898654-d32a-4568-949d-77d245b286c3.png)
+
+### `POST`
+![post](https://user-images.githubusercontent.com/100974682/171772883-156f1f43-7e95-44f4-95e3-db125f7cac72.png)
+
+### `PUT`
+![put](https://user-images.githubusercontent.com/100974682/171772900-cc39a4d4-ad46-46c3-a676-14b7ebf7e7ae.png)
+
+### `DELETE`
+![delete](https://user-images.githubusercontent.com/100974682/171772922-35a996b8-945f-4438-ae53-da512e15b56a.png)
+
+### `PATCH`
+![patch](https://user-images.githubusercontent.com/100974682/171772942-5d6184d8-3b5b-4c1c-a38d-a52729c1c412.png)
+
+================================= :) 
+
+
+**# Segue minhas redes sociais, me add.**  :)
+
+- [linkedin](https://www.linkedin.com/in/b%C3%A1rbara-gon%C3%A7alves-211b5691/)
+- [github](https://github.com/idbabis) 
+- E-mail: idbabis@gmail.com
 ---
